@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import BasicPropsTypes from './pages/BasicPropsTypes';
 import SagaTest from './pages/sagatest/SagaTest';
+import { UserH1tagContainer } from './pages/sagaTest2Container/containers/UserH1tagContainer';
 
 export interface IAppProps {}
 const App: React.FC<IAppProps> = (props) => {
@@ -22,6 +23,7 @@ const App: React.FC<IAppProps> = (props) => {
                     <Route path="/about" element={<About />} />
                     <Route path="/bp" element={<BasicPropsTypes />} />
                     <Route path="/sg" element={<SagaTest />} />
+                    <Route path="/sc" element={<UserH1tagContainer name={''} />} />
                 </Routes>
             </Router>
         </>
