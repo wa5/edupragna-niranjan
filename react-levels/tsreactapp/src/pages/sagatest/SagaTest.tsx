@@ -1,5 +1,6 @@
-import React, { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from '../../store/rootReducer';
 import { fetchTodoRequest } from '../../store/todo/actions';
 import { getErrorSelector, getPendingSelector, getTodosSelector } from '../../store/todo/selectors';
 
@@ -8,6 +9,10 @@ const SagaTest = () => {
     const pending = useSelector(getPendingSelector);
     const todos = useSelector(getTodosSelector);
     const error = useSelector(getErrorSelector);
+
+    const getPending = (state: AppState) => state.todo.pending;
+
+    console.log('jhdsjh', getTodosSelector, todos);
 
     useEffect(() => {
         dispatch(fetchTodoRequest());

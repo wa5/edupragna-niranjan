@@ -5,12 +5,6 @@ import { fetchTodoFailure, fetchTodoSuccess } from './actions';
 import { FETCH_TODO_REQUEST } from './actionTypes';
 import { ITodo } from './types';
 
-interface j {
-    userId: number;
-    id: number;
-    title: string;
-    completed: boolean;
-}
 
 const getTodos = () => axios.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos');
 
